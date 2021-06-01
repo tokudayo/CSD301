@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 
 /**
- * Implementation of level M, degree 2*M+1 B-Tree. The tree is initialized with a value for M.
+ * Implementation of level M, degree 2*M+1 B-Tree.
+ * The tree is initialized with a value for M.
+ * The tree supports 3 operation: get the Node containing a 
+ * key, insert a key and delete a key from the tree.
  * @author To Duc
  * @since 2021-6-1
  */

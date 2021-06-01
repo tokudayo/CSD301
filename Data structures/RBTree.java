@@ -1,6 +1,9 @@
 /**
  * Implementation of red black tree map.
  * This implementation treats NIL nodes as real nodes.
+ * The map supports 3 main operation: get the value 
+ * corresponding to a key, insert a key-value pair
+ * and delete a key-value pair.
  * @author To Duc
  * @since 2021-6-1
 */

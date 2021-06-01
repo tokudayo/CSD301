@@ -43,6 +43,7 @@ public class RBTree {
         return treeSize;
     }
 
+    // Insert a <k, v> pair to the tree map
     public void insert(int k, int v) {
         treeSize++;
         Node nn = new Node(k, v);
@@ -52,6 +53,7 @@ public class RBTree {
         nn.r = rNIL;
         nn.RED = true;
 
+        // Initialize root if tree is empty
         if (root == null) {
             root = nn;
             nn.parent = null;
@@ -61,6 +63,8 @@ public class RBTree {
 
         Node cur = root;
         boolean insertToLeft;
+
+        // Traverse the tree to find where to insert <k, v>
         while (true) {
             if (cur.key >= k) {
                 if (cur.l.NIL) {
@@ -80,6 +84,7 @@ public class RBTree {
         insertFix(nn);
     }
 
+    // Get value of a key
     public int get(int k) {
         Node cur = root;
         while (!cur.NIL) {
@@ -90,11 +95,13 @@ public class RBTree {
         return 0;
     }
 
+    // Delete a key
     public void delete(int k) {
         Node x = find(k);
         if (x != null) delete(x);
     }
 
+    // Return the node that contains key k
     private Node find(int k) {
         Node cur = root;
         while (!cur.NIL) {
@@ -105,6 +112,7 @@ public class RBTree {
         return null;
     }
 
+    // BST right rotation
     private void rotateRight(Node x) {
         Node p = x.parent;
         Node c = x.l;
@@ -126,6 +134,7 @@ public class RBTree {
         c.r = x;
     }
 
+    // BST left rotation
     private void rotateLeft(Node x) {
         Node p = x.parent;
         Node c = x.r;
@@ -147,10 +156,12 @@ public class RBTree {
         c.l = x;
     }
 
+    // Return true if node x is the left child of its parent
     private boolean isLeftChild(Node x) {
         return x.parent != null && x.parent.l == x;
     }
 
+    // Fix the tree after insertion
     private void insertFix(Node x) {
         if (x == root) {
             return;
@@ -159,7 +170,6 @@ public class RBTree {
         if (!x.parent.RED) return;
 
         // Re-coloring and rotation
-
         Node p = x.parent;
         Node gp = p.parent;
         if (gp == null) return;
@@ -198,6 +208,7 @@ public class RBTree {
         }
     }
 
+    // Swap the content of 2 nodes x, y
     private void swap(Node x, Node y) {
         int temp = x.key;
         x.key = y.key;
@@ -210,6 +221,7 @@ public class RBTree {
         y.NIL = tempState;
     }
 
+    // Fix the "double-black" problem after deletion
     private void doubleBlackFix(Node x) {
         if (x == root) return;
         Node p = x.parent;
@@ -260,6 +272,7 @@ public class RBTree {
         }
     }
 
+    // Fix the tree after deletion
     private void deleteFix(Node x) {
         // x should have 1 or no real (non-NIL) children
         // Denote c as the child to replace x
@@ -285,6 +298,7 @@ public class RBTree {
         }
     }
 
+    // Delete a node
     private void delete(Node x) {
         treeSize--;
         if (treeSize == 0) {

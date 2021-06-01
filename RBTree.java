@@ -1,3 +1,9 @@
+/**
+ * Implementation of red black tree map.
+ * This implementation treats NIL nodes as real nodes.
+ * @author To Duc
+ * @since 2021-6-1
+*/
 public class RBTree {
     class Node {
         int key;
@@ -26,18 +32,6 @@ public class RBTree {
         root = null;
         treeSize = 0;
     }
-
-//    int depth(int k) {
-//        int d = 1;
-//        Node cur = root;
-//        while (!cur.NIL) {
-//            if (cur.key == k) return d;
-//            else if (cur.key > k) cur = cur.l;
-//            else cur = cur.r;
-//            d++;
-//        }
-//        return d;
-//    }
 
     public int size() {
         return treeSize;

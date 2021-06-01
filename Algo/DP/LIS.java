@@ -2,6 +2,7 @@ import static java.lang.Math.max;
 
 /**
  * Problem: Find the longest increasing subsequence (LIS) of a given array of integers.
+ * Time complexity: O(n^2)
  * @author To Duc
  * @since 2021-6-2
  */

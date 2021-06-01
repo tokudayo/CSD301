@@ -1,10 +1,12 @@
 import java.util.Random;
 
-/** Random
- * 
+/**
+ * Implementation of randomized quick sort algorithm.
+ * Time complexity (average): O(n.logn)
+ * @author To Duc
+ * @since 2021-6-1
  */
 public class Main{
-
     // Sort array arr in [l;r] interval using quick sort.
     public static void quickSort(int[] arr, int l, int r) {
         // Choose random pivot
@@ -16,7 +18,7 @@ public class Main{
         
         // Partitioning
         int i = l, j = r - 1;
-        while(i <= j){
+        while(i <= j) {
             if(arr[i] < arr[r]) i++;
             else swap(arr, i, j--);
         }

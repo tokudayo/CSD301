@@ -1,18 +1,11 @@
 import java.util.Random;
 
-public class QuickSort{
+/** Random
+ * 
+ */
+public class Main{
 
-    public static void printArr(int[] arr) {
-        for (int i = 0; i < arr.length; i++) System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-    
-    public static void swap(int arr[], int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
+    // Sort array arr in [l;r] interval using quick sort.
     public static void quickSort(int[] arr, int l, int r) {
         // Choose random pivot
         Random gen = new Random();
@@ -35,6 +28,15 @@ public class QuickSort{
         if (i + 1 < r) quickSort(arr, i + 1, r);
     }
 
+    // Swap 2 elements
+    public static void swap(int arr[], int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    
+
+    // Driver program
     static int N = 20;
 
     public static void main(String []args) {
@@ -49,5 +51,11 @@ public class QuickSort{
         
         System.out.println("After sorting: ");
         printArr(arr);
+    }
+
+    // Auxiliary function
+    public static void printArr(int[] arr) {
+        for (int i = 0; i < arr.length; i++) System.out.print(arr[i] + " ");
+        System.out.println();
     }
 }

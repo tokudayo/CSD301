@@ -6,7 +6,7 @@ import static java.lang.Math.min;
  * It supports 2 main operation: insert and get the min element.
  * @author To Duc
  * @since 2021-6-1
-*/
+ */
 public class Heap {
     private int[] h; // Heap as array
     private int vacant = 1; // Next available position

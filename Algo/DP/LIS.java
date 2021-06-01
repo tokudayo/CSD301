@@ -6,7 +6,7 @@ import static java.lang.Math.max;
  * @since 2021-6-2
  */
 public class Main {
-
+    // Returns the LIS of an array of integers.
     static int[] LIS(int[] a) {
         int n = a.length;
         // Let f[i] be the length of LIS from a[0] to a[i]

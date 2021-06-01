@@ -2,7 +2,7 @@ import static java.lang.Math.min;
 
 /**
  * Implementation of integer min heap.
- * The heap is initialized empty with a fixed size.
+ * The heap is initialized with a fixed size or with an array.
  * It supports 2 main operation: insert and get the min element.
  * @author To Duc
  * @since 2021-6-1
@@ -14,6 +14,13 @@ public class Heap {
     public Heap(int size) {
         h = new int[size];
     }
+
+	public Heap(int[] arr) {
+        // Heap initialized using array with have double capacity
+        // of the array to make room for insertion
+		h = new int[arr.length*2];
+		for (int elem : arr) insert(elem);
+	}
 
     // Get the min element in the heap
     public int get () {
@@ -34,11 +41,6 @@ public class Heap {
     public void insert (int x) {
         h[vacant] = x;
         bottomUp(vacant++);
-    }
-
-    // Insert an array of element to the heap
-    public void insert(int[] arr) {
-        for (int elem : arr) insert(elem);
     }
 
     // Bottom-up heapify

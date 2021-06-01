@@ -1,5 +1,25 @@
 import static java.lang.Math.min;
 
+/**
+ * Find the k-th smallest element of an array using heap.
+ * Time complexity: O(n.logn).
+ * @author To Duc
+ * @since 2021-6-1
+ */
+public class Main {
+	// k-th element using Heap
+    public static void main(String[] args) {
+		int[] a = {3, 1, 4, 2, 6, 7, 10, 0, 0, 0, 5, 9, 8, 8, 2};
+		int k = 8;
+		Help h = new Heap(a);
+		for (int i = 0; i < k - 1; i++) h.get();
+		System.out.println(h.get());
+    }
+}
+
+/**
+ * Copy-pasted code from my min heap implementation
+ */
 class Heap {
 	private int[] h; // Heap as array
 	private int vacant = 1; // Next available position
@@ -63,16 +83,4 @@ class Heap {
 		h[posA] = h[posB];
 		h[posB] = buffer;
 	}
-}
-
-
-public class Main {
-	// k-th element using Heap
-    public static void main(String[] args) {
-		int[] a = {3, 1, 4, 2, 6, 7, 10, 0, 0, 0, 5, 9, 8, 8, 2};
-		int k = 8;
-		Help h = new Help(a);
-		for (int i = 0; i < k - 1; i++) h.get();
-		System.out.println(h.get());
-    }
 }
